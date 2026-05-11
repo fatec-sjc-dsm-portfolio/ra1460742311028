@@ -1,0 +1,149 @@
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6) var(--gutter);
+  transition: background var(--dur-base) var(--ease-out),
+              backdrop-filter var(--dur-base) var(--ease-out),
+              padding var(--dur-base) var(--ease-out);
+}
+
+.site-header.is-condensed {
+  background: var(--bg-overlay);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+@media (min-width: 821px) and (hover: hover) {
+  .site-header.is-condensed {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--fg-primary);
+  z-index: 2;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.site-header__brand:hover { transform: translateX(-1px); }
+.site-header__brand img {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+@media (max-width: 480px) {
+  .site-header__brand span { display: none; }
+}
+
+/* ───────── Hamburger toggle (mobile only) ───────── */
+
+.site-header__toggle {
+  display: none; 
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--fg-primary);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: border-color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+}
+.site-header__toggle:hover { border-color: var(--accent); }
+
+.site-header__toggle span {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform var(--dur-base) var(--ease-out),
+              opacity var(--dur-fast) var(--ease-out),
+              top var(--dur-base) var(--ease-out);
+}
+.site-header__toggle span:nth-child(1) { top: 14px; }
+.site-header__toggle span:nth-child(2) { top: 21px; }
+.site-header__toggle span:nth-child(3) { top: 28px; }
+
+.site-header__toggle[aria-expanded='true'] span:nth-child(1) {
+  top: 21px;
+  transform: rotate(45deg);
+}
+.site-header__toggle[aria-expanded='true'] span:nth-child(2) {
+  opacity: 0;
+}
+.site-header__toggle[aria-expanded='true'] span:nth-child(3) {
+  top: 21px;
+  transform: rotate(-45deg);
+}
+
+/* ───────── Nav (desktop default) ───────── */
+
+.site-header__nav {
+  display: flex;
+  gap: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--fg-secondary);
+}
+.site-header__nav a { transition: color var(--dur-fast) var(--ease-out); }
+.site-header__nav a:hover { color: var(--accent-hi); }
+
+/* ───────── Mobile breakpoint ─────────
+   ≤820px: nav vira drawer full-screen, hamburger aparece. */
+
+@media (max-width: 820px) {
+  .site-header__toggle { display: inline-flex; align-items: center; justify-content: center; }
+
+  .site-header__nav {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-8);
+    padding: var(--space-16) var(--gutter);
+    background: var(--bg-base);
+    border: 0;
+    font-size: var(--fs-2xl);
+    color: var(--fg-primary);
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--dur-base) var(--ease-out),
+                transform var(--dur-base) var(--ease-out),
+                visibility var(--dur-base) var(--ease-out);
+    z-index: 1;
+  }
+
+  .site-header__nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .site-header__nav a {
+    color: var(--fg-primary);
+    border-bottom: 1px solid var(--border-subtle);
+    padding-block: var(--space-3);
+    width: 100%;
+    letter-spacing: var(--tracking-tight);
+  }
+}
+
+body.has-menu-open { overflow: hidden; }

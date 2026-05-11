@@ -1,0 +1,231 @@
+.experience-detail {
+  background: var(--bg-base);
+  color: var(--fg-primary);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+.experience-detail[hidden] { display: none; }
+
+.experience-detail__nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-block: var(--space-4);
+  padding-inline: var(--gutter);
+  background: var(--bg-overlay);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.experience-detail__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--fg-primary);
+  transition: border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+}
+.experience-detail__back:hover {
+  border-color: var(--accent);
+  color: var(--accent-hi);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.experience-detail__crumbs {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--fg-muted);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ───────── Container (1280 max, gutter on both sides) ───────── */
+
+.experience-detail__container {
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-block: var(--space-24) var(--space-32);
+  padding-inline: var(--gutter);
+}
+
+/* ───────── Intro ───────── */
+
+.experience-detail__intro {
+  max-width: 880px;
+  margin-bottom: var(--space-16);
+}
+
+.experience-detail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.experience-detail__period {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--accent-hi);
+  letter-spacing: var(--tracking-wide);
+}
+.experience-detail__period strong { color: var(--fg-primary); font-weight: var(--fw-medium); }
+
+.experience-detail__model,
+.experience-detail__local {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  color: var(--fg-secondary);
+}
+.experience-detail__model { border-color: var(--accent); color: var(--accent-hi); }
+
+.experience-detail__role {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-3);
+  color: var(--fg-primary);
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.experience-detail__company {
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+  color: var(--fg-secondary);
+  margin: 0;
+}
+.experience-detail__company a {
+  color: inherit;
+  border-bottom: 1px solid var(--border-strong);
+  padding-block: 1px;
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+.experience-detail__company a:hover {
+  color: var(--accent-hi);
+  border-color: var(--accent);
+}
+
+/* ───────── Sections ───────── */
+
+.experience-detail__section {
+  padding-block: var(--space-12);
+  border-top: 1px solid var(--border-subtle);
+}
+.experience-detail__section:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.experience-detail__section-eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--accent-hi);
+}
+
+.experience-detail__prose {
+  max-width: 880px;
+  font-size: var(--fs-lg);
+  line-height: 1.7;
+  color: var(--fg-secondary);
+  margin: 0;
+}
+.experience-detail__prose a {
+  color: var(--accent-hi);
+  border-bottom: 1px solid var(--border-strong);
+  padding-block: 1px;
+  transition: border-color var(--dur-fast) var(--ease-out);
+}
+.experience-detail__prose a:hover { border-color: var(--accent); }
+
+/* ───────── Deliverables list ─────────
+   Cada item é um card largo com bullet à esquerda. */
+
+.experience-detail__deliverables {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 880px;
+}
+
+.experience-detail__deliverables li {
+  position: relative;
+  padding-block: var(--space-4);
+  padding-inline: var(--space-12) var(--space-6);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--fg-secondary);
+  transition: border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+.experience-detail__deliverables li:hover {
+  border-color: var(--accent);
+  transform: translateX(2px);
+}
+.experience-detail__deliverables li::before {
+  content: '';
+  position: absolute;
+  left: var(--space-6);
+  top: calc(var(--space-4) + 0.55em);
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* ───────── Tech chips ───────── */
+
+.experience-detail__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.experience-detail__tech li {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg-secondary);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  transition: border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+}
+.experience-detail__tech li:hover {
+  border-color: var(--accent);
+  color: var(--fg-primary);
+}

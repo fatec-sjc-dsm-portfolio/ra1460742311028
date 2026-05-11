@@ -1,0 +1,24 @@
+[
+  {
+    "empresa": "Genesis Data Culture",
+    "cargo": "Fullstack Developer · Plataforma BlackBots",
+    "inicio": "Jun 2025",
+    "fim": null,
+    "local": "Remoto",
+    "modelo": "PJ",
+    "descricao": "Desenvolvedor fullstack na <a href=\"https://blackbots.com.br/\" target=\"_blank\" rel=\"noopener\">BlackBots</a>, plataforma de mercado financeiro que unifica operação em renda variável (B3, com integração às parceiras XP e Cedro) e cripto (OKX) em uma única interface. Atuo de ponta a ponta: do refinamento de backlog à arquitetura, do desenvolvimento ao deploy automatizado, com responsabilidade direta sobre os módulos críticos do produto.",
+    "conquistas": [
+      "Crescimento de menos de 50 para mais de 200 usuários ativos diariamente desde minha entrada",
+      "Latência inferior a 10 ms para envio de ordens via Cedro na B3",
+      "Motor de execução de ordens unificado para B3 e cripto, com integração nativa às parceiras XP, Cedro e OKX",
+      "Gráfico de mercado em tempo real no estilo TradingView, construído com ECharts e WebSockets para cotação e estado da conta",
+      "Módulo de histórico de contas com casamento de ordens via FIFO para apuração precisa de PnL e posição",
+      "Sistema de campeonatos B3 que permite usuários competirem entre si sem risco financeiro",
+      "Camada completa de pagamentos integrando Stripe, AbacatePay e Eduzz (checkout, assinaturas e produtos digitais)",
+      "Módulo educacional dentro da plataforma no formato Udemy, com gestão de cursos e progresso do aluno",
+      "Pipeline de deploy automatizado em Cloud Run (backend), AWS EC2 (serviços externos) e Firebase"
+    ],
+    "tecnologias": ["Python", "FastAPI", "Node.js", "React", "TypeScript", "WebSockets", "ECharts", "AWS", "Cloud Run", "Firebase", "Stripe"],
+    "url": "https://genesis-dataculture.com/"
+  }
+]

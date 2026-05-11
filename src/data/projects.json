@@ -1,0 +1,308 @@
+{
+  "projetos": [
+    {
+      "categoria": "Projeto Profissional · Founder",
+      "nome": "Motus Sports — Plataforma de Inteligência Esportiva",
+      "descricao": "Plataforma de inteligência esportiva que integra dados de atletas em um único ambiente e usa IA preditiva para antecipar riscos de lesão antes que aconteçam. Atende clubes profissionais de futebol que precisam aumentar a disponibilidade do elenco, reduzir baixas médicas e tomar decisões de escalação com base em dados reais não em intuição.",
+      "problema": "O futebol profissional brasileiro perde dinheiro com algo invisível: a lesão. A Série A registra 772 baixas médicas em um único ano e mantém, em média, R$ 804 milhões por mês em folha parada atletas que recebem sem poder jogar. Os dados que poderiam prever esses afastamentos existem (carga de treino, sono, dor, histórico, marcadores físicos), mas vivem espalhados em planilhas, apps de wearables e cadernos do departamento médico. Sem integração, ninguém vê o padrão. Quando a lesão acontece, já é tarde.",
+      "solucao": "A Motus integra todos esses sinais auto-relato dos atletas, carga de treino, sono, dor, histórico médico em uma única tela operada pela comissão técnica e pelo departamento médico. Sobre essa base, o sistema roda modelos de IA que cruzam o estado atual de cada atleta com seu padrão histórico e geram alertas preditivos de risco com até 72h de antecedência da partida. Em vez de descobrir o problema no campo, o staff age antes: ajusta carga, poupa o atleta, intervém. O resultado é um elenco mais disponível, decisões de escalação baseadas em evidência e folha de pagamento que volta a render.",
+      "desafios": "Fazer um departamento médico abandonar décadas de planilhas e adotar uma plataforma exige confiança no dado: nenhuma resposta lenta, nenhum alerta falso, nenhuma fricção no auto-relato diário do atleta. Foi preciso projetar um fluxo de coleta com adesão real (atingimos 95,19% de preenchimento de formulários), modelar o risco de lesão a partir de sinais ruidosos e individualizados, e entregar a leitura desse risco em uma interface que o técnico entende em segundos. Em paralelo, construir a operação comercial fechar clubes, validar no campo, sustentar a infraestrutura técnica e o ciclo de produto como Founder.",
+      "repositorio": "private",
+      "demoUrl": "https://motussports.com.br/landing-page",
+      "tecnologias": {
+        "IA Preditiva": "Modelagem de risco de lesão a partir de sinais multivariados (carga, sono, dor, histórico)",
+        "Integração de Dados": "Pipeline unificado de auto-relato, carga de treino e dados clínicos em um único ambiente",
+        "Dashboard Operacional": "Tela única de elenco com 6 sinais vitais por atleta, em tempo real",
+        "Sistema de Alertas": "Notificação preditiva com até 72h de antecedência da partida",
+        "Plataforma Web": "SPA performática com smooth scroll, animações coreografadas e identidade editorial",
+        "Stack Moderna": "React, TypeScript, GSAP, Lenis, Vite — bundle otimizado e Vercel edge"
+      },
+      "contribuicoes_pessoais": "Sou Founder da Motus Sports. Conduzo a visão de produto, a estratégia de go-to-market com clubes profissionais, a arquitetura técnica da plataforma e a narrativa institucional da marca. Desenvolvi pessoalmente a landing page editorial que apresenta a empresa (motussports.com.br/landing-page) 18 cenas scroll-driven em React + GSAP que traduzem o problema, o produto e os resultados reais (4.584 formulários respondidos, 1.059 alertas gerados, 89,4% de disponibilidade do elenco monitorado). Atuo na ponte entre time técnico, comissão dos clubes e investidores, garantindo que cada decisão de produto resolva uma dor concreta do dia a dia do futebol profissional.",
+      "hard_skills": {
+        "Founder / Product Vision": "Definição de roadmap, posicionamento e estratégia de entrada em clubes profissionais",
+        "Go-to-Market B2B": "Vendas consultivas para departamentos médicos e diretorias esportivas",
+        "Arquitetura de Produto": "Modelagem de domínio (atleta, carga, lesão, alerta) e design de fluxos operacionais",
+        "Data-Driven Sports Science": "Tradução de literatura esportiva em modelos de risco aplicáveis em campo",
+        "Frontend Editorial": "React + TypeScript + GSAP + Lenis para interfaces narrativas de alta performance",
+        "Storytelling de Marca": "Narrativa institucional que conecta dado, dor de mercado e proposta de valor"
+      },
+      "imagens": [
+        {
+          "src": "/projects/motus/dashboard-overview.webp",
+          "alt": "Página inicial de motussports.com.br com headline e CTA de demonstração",
+          "caption": "Página inicial · motussports.com.br"
+        },
+        {
+          "src": "/projects/motus/dashboard-elenco.webp",
+          "alt": "Dashboard de elenco com sinais vitais por atleta",
+          "caption": "Dashboard de Elenco"
+        },
+        {
+          "src": "/projects/motus/dashboard-lesoes.webp",
+          "alt": "Dashboard de gestão de lesões com classificação por IA",
+          "caption": "Gestão de Lesões"
+        },
+        {
+          "src": "/projects/motus/dashboard-alertas.webp",
+          "alt": "Tela de alertas preditivos de risco antes da partida",
+          "caption": "Alertas Preditivos"
+        }
+      ]
+    },
+    {
+      "categoria": "Projeto Profissional · Founder",
+      "nome": "Speakyroo — Plataforma de Prática de Inglês para Brasileiros",
+      "descricao": "Plataforma web full-stack de prática ativa de inglês voltada para brasileiros. Diferente de cursos tradicionais, o foco é em imersões interativas, diálogos com personagens, exercícios de listening, reading, gramática e vocabulário tudo nivelado de A1 a C1. Arquitetura monorepo com backend Node.js/Express, frontend React 19/Vite, Firebase Auth, Stripe para pagamentos e 16 modelos Mongoose.",
+      "problema": "Apps tradicionais de inglês focam em exercícios passivos e repetitivos. Falta prática ativa com imersões contextualizadas em situações reais, conversas interativas com árvore de decisões e sistema de progressão inteligente que adapte o conteúdo ao nível do aluno tudo isso com acessibilidade via web, sem precisar instalar app.",
+      "solucao": "Arquitetei uma plataforma com 6 módulos de estudo integrados: Reading (textos com tip words e múltipla escolha), Listening (TTS via Web Speech Synthesis com exercícios de compreensão), Vocabulary (modos passivo e ativo com repetição espaçada), Grammar (exercícios fill-in-the-blank + lições teóricas completas), Interactive Conversations (diálogos com NPCs e árvore de decisões) e Premium Immersions (experiências de 8 etapas com vocabulário, história imersiva, flashcards, prática, listening, matching, teste e desafio final role-play). O backend em Node.js/Express com 16 modelos Mongoose gerencia conteúdo nivelado e progresso granular por módulo. Sistema de repetição espaçada para vocabulário e gramática. Gamificação com XP por etapa e badges por imersão concluída. Modelo freemium com paywall via Stripe e fluxo de retenção no cancelamento.",
+      "desafios": "Modelar 16 schemas MongoDB com compound unique indexes para rastrear progresso granular por usuário, módulo e conteúdo sem duplicatas. Implementar repetição espaçada com lógica de priorização (due items > unseen > random) e critérios de aprendizado multi-condição. Projetar imersões de 8 etapas com lógica de retomada que preserva o estágio e modo exatos do usuário. Garantir controle de acesso premium no backend (não no frontend) com limites por módulo e nível. Otimizar carregamento com lazy loading do Firebase Auth SDK para não impactar visitantes anônimos.",
+      "repositorio": "private",
+      "demoUrl": "https://lp.speakyroo.com/",
+      "tecnologias": {
+        "Node.js / Express / TypeScript": "Backend com 9 routers, middleware de autenticação Firebase e rate limiting",
+        "React 19 / TypeScript / Vite": "SPA com lazy loading, code splitting e compressão Brotli + Gzip",
+        "MongoDB Atlas / Mongoose": "16 modelos com compound unique indexes, progresso granular e conteúdo nivelado",
+        "Firebase Auth": "Autenticação com Email/Password + Google OAuth, verificação JWT via Admin SDK",
+        "Stripe": "Checkout com cupons, webhooks para ativação/cancelamento e fluxo de retenção no cancelamento",
+        "Web Speech Synthesis": "TTS nativo do navegador para exercícios de listening sem dependência externa",
+        "Docker / Docker Compose": "Multi-stage build com Node.js Alpine, reverse proxy e deploy automatizado",
+        "Vercel": "Hosting do frontend com CDN global, Analytics e Speed Insights"
+      },
+      "contribuicoes_pessoais": "Projetei e desenvolvi toda a plataforma de forma independente. Implementei 6 módulos de estudo com 16 modelos Mongoose e progresso granular por usuário. Criei o sistema de repetição espaçada para vocabulário e gramática com lógica de priorização e critérios de aprendizado. Desenvolvi o módulo de Premium Immersions com 8 etapas sequenciais, sistema de XP progressivo, badges e lógica de retomada inteligente. Implementei Interactive Conversations com árvore de decisões, validação de keywords e cálculo de XP. Construí o sistema de pagamentos com Stripe Checkout, webhooks e fluxo de retenção em 2 passos no cancelamento. Otimizei performance com lazy loading do Firebase SDK, manual chunks no Vite e compressão Brotli/Gzip. Configurei infraestrutura Docker com multi-stage build e deploy automatizado via script.",
+      "hard_skills": {
+        "Node.js / Express": "Backend com middleware stack, rate limiting, autenticação Firebase e controle de acesso premium",
+        "React 19 / TypeScript": "SPA com lazy loading, 6 módulos de estudo e gerenciamento de estado via Context API",
+        "MongoDB / Mongoose": "16 modelos com compound unique indexes, spaced repetition e progresso multi-módulo",
+        "Firebase Auth": "Autenticação server-side com JWT verification e lazy loading do SDK no client",
+        "Stripe Integration": "Checkout, webhooks, cancelamento com retenção e controle de assinatura",
+        "System Design": "Arquitetura monorepo, controle de acesso premium server-side e repetição espaçada",
+        "DevOps": "Docker multi-stage build, Docker Compose, reverse proxy e deploy automatizado"
+      },
+      "imagens": [
+        {
+          "src": "/projects/speakyroo/home-plataforma.webp",
+          "alt": "Home da plataforma Speakyroo de prática de inglês",
+          "caption": "Home da plataforma"
+        }
+      ]
+    },
+    {
+      "categoria": "Projeto Acadêmico / Parceria Institucional",
+      "semestre": "Sexto Semestre (2026-1)",
+      "nome": "Plataforma de Análise Socioambiental de Propriedades Rurais",
+      "professor_parceiro": "Fatec",
+      "descricao": "Plataforma web para análise de aspectos Ambientais, Sociais e de Governança (ASG) de propriedades rurais do Estado de São Paulo. Integra dados públicos de cinco fontes oficiais (INPE, FUNAI, ICMBio, Palmares, SICAR) e permite consultas em linguagem natural sobre passivos ambientais como desmatamento, queimadas e interseções com áreas protegidas.",
+      "problema": "Órgãos públicos, instituições financeiras e analistas precisam avaliar o risco socioambiental de imóveis rurais antes de decisões de crédito, fiscalização ou licenciamento. As informações existem espalhadas em bases públicas distintas (alertas de desmatamento, queimadas, terras indígenas, unidades de conservação, CAR), mas exigem conhecimento técnico em GIS para serem cruzadas. Não há ferramenta acessível que faça essa análise consolidada e rastreável em poucos segundos.",
+      "solucao": "Construímos uma plataforma em Python que integra cinco bases públicas oficiais e responde perguntas em linguagem natural sobre qualquer propriedade rural identificada por código CAR. O sistema cruza automaticamente o polígono do imóvel com alertas de desmatamento, focos de queimada, unidades de conservação, terras indígenas e territórios quilombolas, gerando uma nota de risco socioambiental de 0 a 100 com cada componente rastreável até a fonte oficial. A interface inclui mapa interativo com camadas geográficas, chat com NLP para consultas livres, dashboard de indicadores e exportação em PDF.",
+      "desafios": "Modelar a fusão de cinco bases geoespaciais heterogêneas (formatos, projeções e granularidades distintas) em um pipeline de consulta sub-10 segundos. Implementar interpretação de linguagem natural que combina dois temas em uma só pergunta (ex: queimadas e unidades de conservação em um mesmo município). Calcular score de risco ponderado de forma defensável, com cada componente rastreável até a fonte oficial. Garantir resiliência via retry automático quando bases públicas instáveis falham.",
+      "repositorio": "https://github.com/joaogabgr/API-2026-6SEM",
+      "tecnologias": {
+        "Python 3": "Stack obrigatória pelo cliente, com pipelines geoespaciais e processamento de linguagem natural",
+        "NLP / Intent Detection": "Interpretação de perguntas em linguagem natural com identificação de tema e entidades",
+        "Análise Geoespacial": "Cruzamento de polígonos CAR com alertas INPE, terras FUNAI e UCs ICMBio",
+        "Mapa Interativo": "Visualização de camadas geográficas com zoom, navegação e clique",
+        "API Aberta": "Padrões de dados abertos para integração com QGIS e outros SIGs",
+        "Score de Risco": "Cálculo determinístico 0 a 100 com componentes ponderados e rastreabilidade"
+      },
+      "contribuicoes_pessoais": "Contribuí no desenvolvimento do backend Python e no pipeline de análise geoespacial. Atuei na integração das bases públicas (INPE, FUNAI, ICMBio, Palmares, SICAR), na lógica de cruzamento entre polígonos CAR e camadas ambientais, e no mecanismo de cálculo da nota de risco socioambiental com componentes ponderados. Apoiei a resiliência do sistema com retry automático em chamadas a bases instáveis e participei da modelagem do dashboard de indicadores.",
+      "hard_skills": {
+        "Python": "Backend de análise geoespacial e pipelines de dados públicos",
+        "Análise Geoespacial": "Cruzamento de polígonos com alertas ambientais e camadas protegidas",
+        "NLP": "Detecção de intenção e composição de consultas multi-tema",
+        "Integração de Dados Públicos": "Consumo de APIs INPE, FUNAI, ICMBio, Palmares e SICAR",
+        "System Design": "Arquitetura orientada a serviços com saída em padrões abertos",
+        "Sustentabilidade Aplicada": "Tradução de conceitos ASG em métricas computáveis"
+      },
+      "imagens": [
+        {
+          "src": "/projects/rurais/mapa.webp",
+          "alt": "Mapa interativo com camadas geográficas e propriedade rural consultada",
+          "caption": "Mapa interativo com camadas ASG"
+        },
+        {
+          "src": "/projects/rurais/analise.webp",
+          "alt": "Análise consolidada de risco socioambiental da propriedade",
+          "caption": "Análise de risco socioambiental"
+        }
+      ]
+    },
+    {
+      "categoria": "Projeto Acadêmico / Parceria Institucional",
+      "semestre": "Quinto Semestre (2025-1)",
+      "nome": "Sistema Integrado de Almoxarifado, Farmácia e Saúde Militar",
+      "professor_parceiro": "Fatec - Prof. Gerson Da Penha Neto",
+      "descricao": "Sistema full stack multi-plataforma desenvolvido para o Exército Brasileiro, integrando gestão de estoque, farmácia e saúde militar em uma arquitetura unificada com app mobile, API REST e painel administrativo web.",
+      "problema": "O Exército Brasileiro operava com processos descentralizados na gestão de almoxarifado, farmácia e saúde, resultando em baixa rastreabilidade, inconsistências em registros de movimentação de materiais e ausência de integração entre setores críticos.",
+      "solucao": "Arquitetamos um ecossistema completo: app mobile em Flutter com leitura de QR Code e suporte offline-first, backend escalável em Node.js com API REST estruturada, e plataforma web em React (Vite) com dashboards gerenciais em tempo real. O sistema abrange controle de estoque inteligente, rastreamento de movimentações, gestão de fornecedores, emissão automatizada de notas de empenho e módulo de agendamento médico para soldados.",
+      "desafios": "Integrar três domínios complexos (estoque, farmácia e saúde) em uma arquitetura coesa, garantir sincronização em tempo real entre mobile e web, implementar regras rígidas de processos militares e projetar autenticação robusta com controle granular de acesso para múltiplos perfis de usuários.",
+      "repositorio": "https://github.com/joaogabgr/API-2025.2-5SEM",
+      "tecnologias": {
+        "Flutter": "App mobile cross-platform com QR Code, offline-first e UI responsiva",
+        "Node.js": "Backend escalável com API REST e regras de negócio complexas",
+        "Express": "Roteamento e middleware de alta performance",
+        "React (Vite)": "Painel administrativo com dashboards em tempo real",
+        "TypeScript": "Tipagem estática no backend e frontend",
+        "MySQL": "Banco relacional para controle de estoque e agendamentos",
+        "QR Code": "Registro rápido de entrada e saída de materiais",
+        "Docker": "Containerização e padronização de ambientes"
+      },
+      "contribuicoes_pessoais": "Liderei a arquitetura do backend em Node.js e co-desenvolvi o app mobile em Flutter. Estruturei toda a API REST, implementei a lógica de controle de estoque com leitura de QR Code, desenvolvi os módulos de emissão de notas de empenho e cobrança automática, e participei da construção do painel administrativo em React. Foco constante em segurança, escalabilidade, clean code e integração entre camadas.",
+      "hard_skills": {
+        "Flutter": "Desenvolvimento mobile com integrações nativas e QR Code",
+        "Node.js": "APIs robustas com regras de negócio complexas",
+        "Arquitetura de Software": "Design de sistemas multi-plataforma integrados",
+        "Segurança": "Autenticação robusta e controle de acesso granular"
+      },
+      "imagens": [
+        {
+          "src": "/projects/militar/dashboard.webp",
+          "alt": "Dashboard administrativo do sistema integrado de almoxarifado militar",
+          "caption": "Dashboard administrativo"
+        },
+        {
+          "src": "/projects/militar/estoque.webp",
+          "alt": "Tela de gestão de estoque com leitura de QR Code",
+          "caption": "Gestão de estoque"
+        }
+      ]
+    },
+    {
+      "categoria": "Projeto Acadêmico / Parceria Institucional",
+      "semestre": "Quarto Semestre (2025-1)",
+      "nome": "Sistema de Monitoramento Ambiental Tecsus",
+      "professor_parceiro": "Fatec",
+      "descricao": "Sistema de monitoramento ambiental para a Tecsus, com coleta, processamento e visualização de dados meteorológicos em tempo real. Integra estações IoT com sensores de temperatura, umidade, pressão, velocidade do vento e índice pluviométrico, oferecendo dashboards interativos, alertas automáticos para eventos críticos e materiais educativos para estudantes do ensino médio.",
+      "problema": "Estações meteorológicas geram volumes contínuos de dados que, quando armazenados sem agregação ou apresentação adequada, perdem valor analítico e operacional. Faltava à Tecsus uma plataforma única que recebesse leituras dos sensores em tempo real, calculasse médias horárias e diárias, alertasse sobre condições climáticas críticas e ainda servisse como apoio educacional, transformando dados brutos em conhecimento acessível para estudantes.",
+      "solucao": "Construímos uma plataforma com modelo de dados dinâmico que suporta o cadastro de estações com sensores variados, recebe leituras em tempo real, processa médias horárias e diárias e armazena os dados de forma otimizada para grandes volumes. Sobre essa base operam três experiências: dashboard interativo com filtros temporais para análise visual, sistema de alertas automáticos para condições climáticas críticas e área educativa com tutoriais sobre conceitos meteorológicos. Em paralelo construímos a estação física com sensores e componentes eletrônicos, integrada ao mesmo backend.",
+      "desafios": "Projetar um modelo de dados flexível o suficiente para acomodar diferentes combinações de sensores em diferentes estações sem reescrever o schema a cada novo equipamento. Emular o recebimento de dados durante o desenvolvimento para destravar o trabalho de frontend e processamento sem depender de equipamentos físicos prontos. Implementar datalogger com persistência confiável e controle de acesso granular para administradores, funcionários e usuários públicos. Sustentar deploy automatizado com publicação contínua das atualizações.",
+      "repositorio": "https://github.com/joaogabgr/API-2025.1-4SEM",
+      "tecnologias": {
+        "TypeScript": "Tipagem estática no backend e frontend para confiabilidade do domínio meteorológico",
+        "React": "Dashboards interativos com filtros temporais e visualização em tempo real",
+        "Node.js": "Backend de ingestão e processamento de leituras dos sensores",
+        "IoT / Sensores": "Estação física com componentes eletrônicos integrada ao backend",
+        "Datalogger": "Persistência automatizada das leituras dos sensores com integridade garantida",
+        "Sistema de Alertas": "Notificações automáticas baseadas em condições climáticas críticas",
+        "Banco Otimizado": "Armazenamento eficiente para grandes volumes de séries temporais",
+        "CI/CD": "Verificação automática e publicação contínua de novas versões"
+      },
+      "contribuicoes_pessoais": "Contribuí no backend Node.js de ingestão e processamento de leituras dos sensores, no cálculo de médias horárias e diárias e no sistema de alertas automáticos. Atuei no modelo de dados flexível que suporta diferentes combinações de sensores por estação. Implementei o emulador de leituras que destravou o desenvolvimento sem dependência da estação física pronta. Participei da construção dos dashboards React e do controle de acesso por perfil (administrador, funcionário, público).",
+      "hard_skills": {
+        "Node.js / TypeScript": "Backend tipado para ingestão e processamento de telemetria",
+        "React": "Dashboards interativos com filtros temporais",
+        "IoT": "Integração de sensores físicos a backend de monitoramento",
+        "Modelagem Dinâmica": "Schema flexível para combinações variáveis de sensores",
+        "Séries Temporais": "Cálculo e armazenamento eficiente de médias horárias e diárias",
+        "CI/CD": "Pipeline automatizado de verificação e deploy contínuo"
+      }
+    },
+    {
+      "categoria": "Projeto Acadêmico / Parceria Institucional",
+      "semestre": "Terceiro Semestre (2024-2)",
+      "nome": "Portal de Transparência FAPG",
+      "professor_parceiro": "Fatec",
+      "descricao": "Portal de transparência para a Fundação de Apoio à Pesquisa de Pós-Graduandos (FAPG). Permite cadastro e gestão de projetos, busca pública avançada com múltiplos filtros e geração de estatísticas em dashboards interativos, além de migrar dados de uma aplicação legada para o novo banco projetado.",
+      "problema": "A FAPG mantinha registros de projetos de pesquisa em uma aplicação legada que dificultava o acesso público às informações e o cruzamento de dados por coordenador, empresa, status ou período. Sem uma plataforma moderna, a transparência institucional ficava limitada e a equipe administrativa gastava tempo respondendo solicitações que poderiam ser autoatendidas via portal.",
+      "solucao": "Desenvolvemos um portal web com área administrativa para cadastro, edição e exclusão de projetos, e área pública com busca avançada filtrando por coordenador, empresa, status (em andamento, encerrados, não iniciados), classificação e período. Implementamos a ferramenta de importação que migra dados da aplicação legada para o novo modelo de dados, dashboards visuais com indicadores agregados e exportação dos dados em formato adequado para auditoria e relatórios externos.",
+      "desafios": "Importar dados legados sem perda semântica, mapeando estruturas antigas para o novo modelo relacional. Projetar buscas combinadas que permitissem ao usuário encontrar projetos por múltiplos critérios sem aumentar a complexidade da interface. Garantir performance dos dashboards mesmo com volume crescente de projetos cadastrados.",
+      "repositorio": "https://github.com/joaogabgr/API-2024.2-3SEM",
+      "tecnologias": {
+        "Backend Web": "API REST para gestão de projetos, busca avançada e migração de dados legados",
+        "Frontend Web": "Interface pública e administrativa com formulários e dashboards",
+        "Banco Relacional": "Modelo projetado para suportar pesquisa multi-critério em escala",
+        "Importação de Dados": "Pipeline de migração da aplicação legada para o novo schema",
+        "Dashboards": "Gráficos interativos com filtros temporais e por categoria",
+        "Exportação": "Geração de relatórios estruturados a partir dos dados agregados"
+      },
+      "contribuicoes_pessoais": "Contribuí no backend de gestão de projetos e nas funcionalidades de busca avançada multi-critério (coordenador, empresa, status, classificação, período). Atuei na ferramenta de importação que migra dados da aplicação legada preservando integridade semântica. Participei do desenvolvimento dos dashboards com indicadores agregados e da exportação de dados em formato adequado para auditoria.",
+      "hard_skills": {
+        "Backend Web": "API REST tipada para domínio de transparência institucional",
+        "Frontend Web": "Interfaces pública e administrativa com fluxos distintos",
+        "Modelagem Relacional": "Schema projetado para busca multi-critério eficiente",
+        "Migração de Dados": "Mapeamento de estruturas legadas para novo modelo",
+        "Dashboards": "Visualizações agregadas com filtros dinâmicos",
+        "Exportação Estruturada": "Saída de dados auditável para relatórios externos"
+      }
+    },
+    {
+      "categoria": "Projeto Acadêmico / Parceria Institucional",
+      "semestre": "Segundo Semestre (2024-1)",
+      "nome": "Service Desk Sync de Gestão de Chamados",
+      "professor_parceiro": "Fatec",
+      "descricao": "Plataforma de gestão de chamadas de serviços com perfis distintos para cliente, técnico e administrador. Cobre cadastros (usuários, técnicos, equipamentos, horários), registro e acompanhamento de chamados em todo o ciclo de vida, base de conhecimento (FAQ) e controle de SLA.",
+      "problema": "Equipes de suporte sem ferramenta dedicada perdem chamados, tratam o mesmo problema várias vezes e não conseguem demonstrar cumprimento de SLA. O atendimento ad hoc por e-mail ou planilha quebra rastreabilidade, dificulta priorização e não escala quando o volume cresce.",
+      "solucao": "Desenvolvemos uma plataforma com três interfaces especializadas: cliente abre e acompanha tickets pessoais, técnico recebe a fila de chamados e registra soluções, administrador cadastra usuários, técnicos, equipamentos e regras de SLA. Adicionamos base de conhecimento (FAQ) com soluções para problemas recorrentes, permitindo autoatendimento antes da abertura de chamado. Login com verificação de CPF para clientes e controle de acesso por perfil garantem segurança operacional.",
+      "desafios": "Modelar o ciclo de vida do chamado (Aberto, Em processo, Finalizado, Concluído) com transições controladas e rastreáveis. Projetar perfis de usuário com permissões granulares e fluxos visuais distintos sem duplicar código. Garantir que a base de conhecimento reduzisse de fato o volume de chamados abertos, integrando-a ao fluxo de criação.",
+      "repositorio": "https://github.com/joaogabgr/API-2024.1-2SEM",
+      "tecnologias": {
+        "Node.js / TypeScript": "Backend tipado com regras de negócio e API REST",
+        "React": "Interfaces dedicadas para cliente, técnico e administrador",
+        "MySQL": "Persistência relacional para chamados, usuários, equipamentos e SLA",
+        "HTML / CSS": "Estilização e layout responsivo das interfaces",
+        "Figma": "Prototipação de wireframes e validação de fluxos antes da implementação",
+        "Sistema de SLA": "Controle automatizado de tempo de resposta e resolução por prioridade"
+      },
+      "contribuicoes_pessoais": "Contribuí no backend Node.js com TypeScript e na construção das interfaces React para os três perfis de usuário (cliente, técnico, administrador). Atuei na modelagem do ciclo de vida do chamado, na lógica de controle de SLA e nos cadastros essenciais (usuários, técnicos, equipamentos, horários). Implementei a base de conhecimento com FAQ integrada ao fluxo de abertura de chamado para reduzir o volume de tickets.",
+      "hard_skills": {
+        "Node.js": "Backend tipado para sistemas multi-perfil",
+        "React": "Interfaces especializadas por perfil de usuário",
+        "MySQL": "Modelagem relacional para domínio de service desk",
+        "TypeScript": "Tipagem estática no backend e frontend",
+        "Controle de Acesso": "Perfis com permissões granulares e segurança operacional",
+        "Modelagem de Domínio": "Ciclo de vida de chamados com transições controladas"
+      },
+      "imagens": [
+        {
+          "src": "/projects/serviceDesk/overview.webp",
+          "alt": "Visão geral da plataforma de gestão de chamados",
+          "caption": "Visão geral"
+        },
+        {
+          "src": "/projects/serviceDesk/dashboard.webp",
+          "alt": "Dashboard de chamados abertos com SLA e perfis de usuário",
+          "caption": "Gestão de chamados e SLA"
+        }
+      ]
+    },
+    {
+      "categoria": "Projeto Acadêmico / Parceria Institucional",
+      "semestre": "Primeiro Semestre (2023-2)",
+      "nome": "Sync Nefro Plataforma de Apoio em Nefrologia Pediátrica",
+      "professor_parceiro": "Fatec",
+      "descricao": "Plataforma informativa voltada a mães e responsáveis por crianças com Insuficiência Renal Crônica (DRC). Reúne orientações clínicas, dados públicos sobre tratamento (centros transplantadores, fila de espera, índice de mortalidade), perguntas frequentes e um blog comunitário com histórias reais e notícias sobre nefrologia pediátrica.",
+      "problema": "Famílias com crianças diagnosticadas com DRC enfrentam um diagnóstico raro, vocabulário médico técnico e a busca por tratamento espalhada em fontes oficiais distintas. Falta uma porta de entrada acessível que agregue informações sobre a doença, conecte famílias a centros de tratamento adequados por região e ofereça espaço de troca emocional entre quem vive a mesma realidade.",
+      "solucao": "Construímos uma plataforma web em Python e Flask com três pilares: conteúdo educativo (página inicial sobre DRC, tipos de tratamento existentes, dados sobre fila de transplante e índice de mortalidade infantil), busca de centros de tratamento com filtro por região, estado e município, e blog comunitário onde mães cadastradas publicam suas experiências e interagem com outras famílias na mesma situação. Painel administrativo permite moderar postagens e comentários reportados.",
+      "desafios": "Coletar e estruturar dados públicos sobre nefrologia pediátrica que estavam dispersos em fontes oficiais distintas. Construir uma interface acolhedora para um público não técnico em situação emocional fragilizada. Implementar moderação manual de conteúdo gerado pelos usuários para manter a integridade da comunidade. Garantir responsividade para acesso predominantemente mobile.",
+      "repositorio": "https://github.com/joaogabgr/API-2023.2-1SEM",
+      "tecnologias": {
+        "Python": "Backend principal da aplicação",
+        "Flask": "Framework web para roteamento, templates e lógica de servidor",
+        "MySQL": "Persistência de usuários, postagens, comentários e dados clínicos",
+        "HTML / CSS / JavaScript": "Frontend responsivo e interativo",
+        "Figma": "Prototipação de wireframes navegáveis antes da implementação",
+        "Painel Administrativo": "Moderação de postagens e comentários para integridade da comunidade"
+      },
+      "contribuicoes_pessoais": "Contribuí no desenvolvimento da plataforma em Python e Flask, atuando na construção do painel administrativo de moderação, na coleta e estruturação dos dados sobre centros de tratamento e fila de transplante, e nas funcionalidades de filtro por região, estado e município. Participei da modelagem do banco de dados da comunidade (postagens, comentários, denúncias) e da implementação do sistema de responsividade para acesso mobile.",
+      "hard_skills": {
+        "Python": "Backend web e manipulação de dados públicos",
+        "Flask": "Framework web com templates e roteamento",
+        "MySQL": "Modelagem relacional para conteúdo gerado pelo usuário",
+        "HTML / CSS / JavaScript": "Interface web responsiva",
+        "Moderação de Conteúdo": "Painel administrativo para integridade comunitária",
+        "UX Acessível": "Design acolhedor para público sensível em situação emocional"
+      },
+      "imagens": [
+        {
+          "src": "/projects/renais/home.webp",
+          "alt": "Página inicial da plataforma Sync Nefro com conteúdo educativo sobre DRC",
+          "caption": "Home da plataforma"
+        },
+        {
+          "src": "/projects/renais/conteudo.webp",
+          "alt": "Página de conteúdo informativo sobre nefrologia pediátrica",
+          "caption": "Conteúdo educativo"
+        }
+      ]
+    }
+  ]
+}

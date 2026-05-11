@@ -1,0 +1,106 @@
+[
+  {
+    "id": 14,
+    "title": "Desenvolvimento de Software Multiplataforma - DSM",
+    "institution": "FATEC São José dos Campos - Professor Jessen Vidal",
+    "date": "2023 - Atual",
+    "type": "degree",
+    "description": "Graduação tecnológica com foco em desenvolvimento de software full stack, engenharia de requisitos, banco de dados, arquitetura de sistemas e metodologias ágeis. Formação voltada para o mercado de trabalho com projetos práticos em parceria com empresas.",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Node.js",
+      "Python",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "API REST",
+      "Scrum",
+      "Git",
+      "Docker",
+      "DevOps",
+      "Arquitetura de Software",
+      "Engenharia de Software"
+    ],
+    "status": "Em andamento (6º semestre)"
+  },
+  {
+    "id": 13,
+    "title": "Currículo Profissional",
+    "institution": "João Gabriel",
+    "date": "Atualizado em Maio 2026",
+    "type": "document",
+    "description": "Currículo completo com informações detalhadas sobre experiência profissional, formação acadêmica e habilidades técnicas.",
+    "documentUrl": "/pdf/Curriculo_Joao_Gabriel.pdf"
+  },
+  {
+    "id": 11,
+    "title": "Proficiência em Inglês",
+    "institution": "FISK Caçapava",
+    "date": "Outubro 2022",
+    "type": "certification",
+    "description": "Formação com nível intermediário, com ênfase em leitura técnica, comunicação e interação em ambientes internacionais.",
+    "skills": [
+      "Comunicação Técnica",
+      "Leitura",
+      "Conversação",
+      "Escrita"
+    ],
+    "certificateUrl": "",
+    "level": "B1"
+  },
+  {
+    "id": 7,
+    "title": "Especialização em Clean Code",
+    "institution": "Udemy",
+    "date": "Março 2023",
+    "type": "course",
+    "description": "Certificação em Clean Code na Prática, aprofundando conhecimentos em boas práticas de programação, padrões de projeto e código limpo.",
+    "skills": [
+      "SOLID",
+      "Design Patterns",
+      "Refactoring"
+    ],
+    "certificateUrl": "http://ude.my/UC-8b63cc8d-a0a1-4dc0-b2fe-05b752c1a797",
+    "documentUrl": "/pdf/CertificadoCleanCode.pdf",
+    "hours": 40
+  },
+  {
+    "id": 8,
+    "title": "Técnicas Avançadas de Java",
+    "institution": "LinkedIn Learning",
+    "date": "Maio 2025",
+    "type": "course",
+    "description": "Curso voltado ao aprimoramento de habilidades avançadas em Java, com foco em generics, estruturas de dados complexas, programação funcional, modularização, multithreading e manipulação de I/O. Com uma abordagem prática e repleta de exemplos reais, prepara o desenvolvedor para enfrentar desafios complexos na construção de aplicações corporativas robustas e escaláveis.",
+    "skills": [
+      "Java",
+      "Generics",
+      "Estruturas de Dados",
+      "Programação Funcional",
+      "Modularização",
+      "Multithreading",
+      "I/O"
+    ],
+    "certificateUrl": "https://www.linkedin.com/learning/certificates/edf530c5d1891c3213596d96fb3a25095e5bcd4062c5f21166150f4de98bfe17",
+    "documentUrl": "/pdf/CertificadoJava.pdf",
+    "hours": 3
+  },
+  {
+    "id": 12,
+    "title": "1º lugar na Maratona de Programação FATEC 2024",
+    "institution": "FATEC São José dos Campos",
+    "date": "Dezembro 2024",
+    "type": "achievement",
+    "description": "Premiação por excelência em resolução de problemas algorítmicos e pensamento computacional, superando mais de 50 equipes concorrentes.",
+    "skills": [
+      "Resolução de Problemas",
+      "Algoritmos",
+      "Trabalho em Equipe",
+      "Pensamento Rápido"
+    ],
+    "certificateUrl": "/pdf/CertificadoMaratona.pdf"
+  }
+]
