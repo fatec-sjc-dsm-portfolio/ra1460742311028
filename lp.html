@@ -1,0 +1,258 @@
+  <!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A0B0D" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+
+    <title>Landing Pages que vendem · João Gabriel</title>
+    <meta name="description" content="Crio Landing Pages rápidas e focadas em conversão. Design + código + deploy em poucos dias. Quatro LPs no ar — veja e fale comigo no WhatsApp." />
+    <meta name="author" content="João Gabriel Grossi Solis" />
+    <meta name="keywords" content="landing page, criação de landing page, lp, desenvolvedor fullstack, conversão, vercel, joaogabgr" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://www.joaogabgr.com/lp" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="João Gabriel · Landing Pages" />
+    <meta property="og:title" content="Landing Pages que vendem · João Gabriel" />
+    <meta property="og:description" content="Design, código e deploy. No ar em poucos dias." />
+    <meta property="og:url" content="https://www.joaogabgr.com/lp" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image" content="https://www.joaogabgr.com/img/og-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Landing Pages que vendem · João Gabriel" />
+    <meta name="twitter:description" content="Design, código e deploy. No ar em poucos dias." />
+    <meta name="twitter:image" content="https://www.joaogabgr.com/img/og-image.jpg" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Desenvolvimento de Landing Pages",
+      "provider": {
+        "@type": "Person",
+        "name": "João Gabriel Grossi Solis",
+        "url": "https://www.joaogabgr.com/",
+        "email": "mailto:joaoggbs62@gmail.com"
+      },
+      "areaServed": "Brasil",
+      "url": "https://www.joaogabgr.com/lp",
+      "description": "Landing Pages focadas em conversão, com design, código e deploy entregues em poucos dias.",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/jbmono-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+
+    <!-- Preload LCP candidates: first two thumbs in the marquee.
+         imagesrcset matches the responsive srcset on the <img> so the
+         browser fetches the right size for the viewport. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/img/lps/motus-sports.webp"
+      imagesrcset="/img/lps/motus-sports-600.webp 600w, /img/lps/motus-sports.webp 960w"
+      imagesizes="(max-width: 720px) 320px, (max-width: 1440px) 30vw, 480px"
+      fetchpriority="high" />
+    <link
+      rel="preload"
+      as="image"
+      href="/img/lps/speakyroo.webp"
+      imagesrcset="/img/lps/speakyroo-600.webp 600w, /img/lps/speakyroo.webp 960w"
+      imagesizes="(max-width: 720px) 320px, (max-width: 1440px) 30vw, 480px"
+      fetchpriority="high" />
+
+    <link rel="stylesheet" href="/src/styles/lp.css" />
+
+    <script>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <header data-site-header class="site-header">
+      <a class="site-header__brand" href="/" aria-label="João Gabriel — voltar ao portfólio">
+        <img src="/img/logo.webp" alt="" width="32" height="32" decoding="async" />
+        <span>joao gabriel · /lp</span>
+      </a>
+
+      <button
+        type="button"
+        class="site-header__toggle"
+        data-menu-toggle
+        aria-label="Abrir menu de navegação"
+        aria-controls="site-nav"
+        aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav id="site-nav" class="site-header__nav" aria-label="Navegação" data-menu-nav>
+        <a href="#trabalho">trabalho</a>
+        <a href="#contato">contato</a>
+        <a href="/">← portfólio</a>
+      </nav>
+    </header>
+
+    <main class="lp-page">
+      <!-- ====================================================
+           1. INTRO — Hero centrado + featured browser
+           ==================================================== -->
+      <section class="lp-hero" aria-labelledby="lp-hero-title">
+        <div class="container lp-hero__inner">
+          <h1 id="lp-hero-title" class="lp-hero__title" data-reveal>
+            Landing Pages que <em>vendem</em>.
+          </h1>
+
+          <p class="lp-hero__lede" data-reveal>
+            Design, código e deploy. No ar em poucos dias.
+          </p>
+
+          <div class="lp-hero__cta" data-reveal>
+            <a class="btn btn--wa" href="#" data-wa-link target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+              </svg>
+              Falar no WhatsApp
+            </a>
+            <a class="btn btn--ghost" href="#trabalho">Ver trabalho ↓</a>
+          </div>
+
+          <ul class="lp-hero__metrics" data-reveal>
+            <li><strong data-lp-count>04</strong><span>LPs no ar</span></li>
+            <li><strong>3–7d</strong><span>Prazo</span></li>
+            <li><strong>90+</strong><span>Lighthouse</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           2. WORK — Showcase + 3 pillars
+           ==================================================== -->
+      <section id="trabalho" class="lp-section lp-work" aria-labelledby="lp-work-title">
+        <div class="container">
+          <header class="lp-section__head" data-reveal>
+            <p class="eyebrow">// trabalho no ar</p>
+            <h2 id="lp-work-title" class="lp-section__title">Projetos no ar. Cada um num nicho diferente.</h2>
+            <p class="lp-section__sub">Cada um resolveu um problema real — não é demonstração. Passa o mouse pra ver detalhes.</p>
+          </header>
+        </div>
+
+        <div id="lp-marquee" class="lp-marquee" data-reveal></div>
+
+        <div class="container">
+          <ul class="lp-pillars" aria-label="O que você recebe">
+            <li class="lp-pillar" data-reveal>
+              <span class="lp-pillar__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+              </span>
+              <span class="lp-pillar__value" data-counter="90" data-prefix="+">+0</span>
+              <h3 class="lp-pillar__label">Velocidade no celular</h3>
+              <p class="lp-pillar__desc">Seu site carrega rápido em qualquer rede, sem travar.</p>
+            </li>
+
+            <li class="lp-pillar" data-reveal>
+              <span class="lp-pillar__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <span class="lp-pillar__value">7d</span>
+              <h3 class="lp-pillar__label">Pronto em uma semana</h3>
+              <p class="lp-pillar__desc">Da nossa conversa até o site no ar, em poucos dias.</p>
+            </li>
+
+            <li class="lp-pillar" data-reveal>
+              <span class="lp-pillar__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+              </span>
+              <span class="lp-pillar__value" data-counter="100" data-suffix="%">0%</span>
+              <h3 class="lp-pillar__label">Site totalmente seu</h3>
+              <p class="lp-pillar__desc">Você é o dono do site.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           3. CTA — Close + 3 truths
+           ==================================================== -->
+      <section id="contato" class="lp-cta" aria-labelledby="lp-cta-title">
+        <div class="container">
+          <div class="lp-cta__card" data-reveal>
+            <p class="eyebrow">// próximo passo</p>
+            <h2 id="lp-cta-title" class="lp-cta__title">Bora colocar seu site no ar?</h2>
+            <p class="lp-cta__sub">Me chama no WhatsApp. Em 24 horas volto com o orçamento.</p>
+
+            <div class="lp-cta__actions">
+              <a class="btn btn--wa" href="#" data-wa-link target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+                </svg>
+                <span data-wa-text>WhatsApp</span>
+              </a>
+
+              <a class="btn btn--ghost" href="#" data-mail-link>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="M3 7l9 6 9-6"/>
+                </svg>
+                joaoggbs62@gmail.com
+              </a>
+            </div>
+
+            <ul class="lp-cta__truths" aria-label="O que esperar">
+              <li class="lp-cta__truth">
+                <span class="lp-cta__truth-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 11-3-6.2L21 4v6h-6"/></svg>
+                </span>
+                <strong>Resposta rápida</strong>
+                <span>Volto em até 24 horas</span>
+              </li>
+              <li class="lp-cta__truth">
+                <span class="lp-cta__truth-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                </span>
+                <strong>Em poucos dias</strong>
+                <span>Site pronto numa semana</span>
+              </li>
+              <li class="lp-cta__truth">
+                <span class="lp-cta__truth-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+                </span>
+                <strong>Totalmente seu</strong>
+                <span>O site fica com você</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <footer class="lp-footer">
+        <div class="container lp-footer__row">
+          <span>© João Gabriel Grossi Solis · Landing Pages sob medida</span>
+          <nav class="lp-footer__links" aria-label="Links rápidos">
+            <a href="/">Portfólio completo</a>
+            <a href="https://github.com/joaogabgr" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/joaogabgr/" target="_blank" rel="noopener">LinkedIn</a>
+          </nav>
+        </div>
+      </footer>
+    </main>
+
+    <a class="lp-fab" href="#" data-wa-link target="_blank" rel="noopener" aria-label="Falar comigo no WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.821 11.821 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+      </svg>
+    </a>
+
+    <script type="module" src="/src/lp.ts"></script>
+  </body>
+</html>

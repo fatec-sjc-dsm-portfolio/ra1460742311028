@@ -1,4 +1,5 @@
-import { gsap } from '@/utils/gsapRegister';
+import { gsap, Draggable, prefersReducedMotion } from '@/utils/gsapRegister';
+import { horizontalLoop, type HorizontalLoop } from '@/utils/horizontalLoop';
 
 interface CarouselOptions {
   slides: readonly HTMLElement[];
@@ -10,6 +11,8 @@ export interface CarouselInstance {
   readonly element: HTMLElement;
   destroy(): void;
 }
+
+const RESIZE_DEBOUNCE_MS = 150;
 
 export function createCarousel(opts: CarouselOptions): CarouselInstance {
   const { slides, showCounter = true, showDots = true } = opts;
@@ -72,24 +75,20 @@ export function createCarousel(opts: CarouselOptions): CarouselInstance {
   controls.appendChild(nav);
   root.appendChild(controls);
 
-  const DRAG_THRESHOLD_PX = 6;
+  const tweenVars = (): gsap.TweenVars => ({
+    duration: prefersReducedMotion() ? 0 : 0.8,
+    ease: 'power3.out',
+  });
 
   let currentIndex   = 0;
-  let dragOffset     = 0; 
-  let isPointerDown  = false; 
-  let hasDragStarted = false;
-  let pointerStartX  = 0;
-  let baseX          = 0; 
+  let isLoopMode     = false;
+  let loop: HorizontalLoop | null = null;
+  let boundedDrag: Draggable | null = null;
+  let boundedOffsets: number[] = [];
+  let suppressClick  = false;
+  let destroyed      = false;
 
-  function offsetForIndex(i: number): number {
-    const slide = slides[i];
-    if (!slide) return 0;
-    return -slide.offsetLeft + parseFloat(getComputedStyle(track).paddingLeft || '0');
-  }
-
-  function clampIndex(i: number): number {
-    return Math.max(0, Math.min(slides.length - 1, i));
-  }
+  /* ── UI ──────────────────────────────────────────────────────────── */
 
   function updateUI(): void {
     if (showCounter) {
@@ -102,69 +101,161 @@ export function createCarousel(opts: CarouselOptions): CarouselInstance {
         d.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
       });
     }
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex === slides.length - 1;
+    // No loop infinito as setas nunca travam; no modo limitado travam nas pontas.
+    prevBtn.disabled = !isLoopMode && currentIndex === 0;
+    nextBtn.disabled = !isLoopMode && currentIndex === slides.length - 1;
   }
 
-  function goTo(i: number, animate = true): void {
-    currentIndex = clampIndex(i);
-    baseX = offsetForIndex(currentIndex);
-    gsap.to(track, {
-      x: baseX,
-      duration: animate ? 0.8 : 0,
-      ease: 'power3.out',
-      overwrite: 'auto',
+  /* ── Supressão de clique pós-drag (os cards abrem detalhe no click) ─ */
+
+  viewport.addEventListener(
+    'click',
+    (e) => {
+      if (suppressClick) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    },
+    true,
+  );
+
+  const onDragStart = (): void => {
+    suppressClick = true;
+    viewport.classList.add('is-dragging');
+  };
+  const onDragEnd = (): void => {
+    viewport.classList.remove('is-dragging');
+    setTimeout(() => { suppressClick = false; }, 0);
+  };
+
+  /* ── Medidas compartilhadas ──────────────────────────────────────── */
+
+  function visibleWidth(): number {
+    const cs = getComputedStyle(viewport);
+    return viewport.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+  }
+
+  function trackGap(): number {
+    return parseFloat(getComputedStyle(track).columnGap) || 0;
+  }
+
+  /** Loop contínuo só é viável se a fita de cards cobre a janela visível. */
+  function canLoop(): boolean {
+    return slides.length >= 2 && track.scrollWidth + trackGap() > visibleWidth() + 1;
+  }
+
+  /* ── Modo loop infinito (Draggable + Inertia via horizontalLoop) ─── */
+
+  function initLoop(startIndex: number): void {
+    isLoopMode = true;
+    loop = horizontalLoop(slides, {
+      paused: true,
+      draggable: true,
+      paddingRight: trackGap(),
+      trigger: viewport,
+      onChange: (_item, i) => {
+        currentIndex = i;
+        updateUI();
+      },
+      onDragStart,
+      onDragEnd,
     });
+    if (startIndex > 0) loop.toIndex(startIndex, { duration: 0 });
     updateUI();
   }
 
-  function onPointerDown(e: PointerEvent): void {
-    if (e.button !== 0) return;
-    isPointerDown  = true;
-    hasDragStarted = false;
-    pointerStartX  = e.clientX;
-    dragOffset     = 0;
+  function teardownLoop(): void {
+    loop?.destroy();
+    loop = null;
   }
 
-  function onPointerMove(e: PointerEvent): void {
-    if (!isPointerDown) return;
+  /* ── Modo limitado (poucos cards): drag livre com inércia e bounds ─ */
 
-    const dx = e.clientX - pointerStartX;
+  function measureBounded(): { minX: number; maxX: number } {
+    const minX = Math.min(0, visibleWidth() - track.scrollWidth);
+    // offsetLeft é relativo ao .carousel (position: relative), então usa o
+    // delta em relação ao primeiro slide para obter a posição dentro do track.
+    const baseLeft = slides[0]?.offsetLeft ?? 0;
+    boundedOffsets = slides.map((s) => Math.max(minX, -(s.offsetLeft - baseLeft)));
+    return { minX, maxX: 0 };
+  }
 
-    if (!hasDragStarted) {
-      if (Math.abs(dx) < DRAG_THRESHOLD_PX) return;
-      hasDragStarted = true;
-      viewport.classList.add('is-dragging');
-      viewport.setPointerCapture(e.pointerId);
-      gsap.killTweensOf(track);
+  function nearestBoundedIndex(x: number): number {
+    let best = 0;
+    let bestDist = Infinity;
+    boundedOffsets.forEach((offset, i) => {
+      const d = Math.abs(offset - x);
+      if (d < bestDist) { bestDist = d; best = i; }
+    });
+    return best;
+  }
+
+  function goToBounded(i: number, animate = true): void {
+    currentIndex = Math.max(0, Math.min(slides.length - 1, i));
+    const vars = animate ? tweenVars() : { duration: 0 };
+    gsap.to(track, { x: boundedOffsets[currentIndex]!, overwrite: 'auto', ...vars });
+    updateUI();
+  }
+
+  function initBounded(startIndex: number): void {
+    isLoopMode = false;
+    const bounds = measureBounded();
+    boundedDrag = Draggable.create(track, {
+      type: 'x',
+      bounds,
+      inertia: true,
+      edgeResistance: 0.82,
+      snap: (value: number) => boundedOffsets[nearestBoundedIndex(value)]!,
+      onDragStart,
+      onDrag(this: Draggable) {
+        currentIndex = nearestBoundedIndex(this.x);
+        updateUI();
+      },
+      onThrowUpdate(this: Draggable) {
+        currentIndex = nearestBoundedIndex(this.x);
+        updateUI();
+      },
+      onRelease: onDragEnd,
+    })[0]!;
+    goToBounded(startIndex, false);
+  }
+
+  function teardownBounded(): void {
+    boundedDrag?.kill();
+    boundedDrag = null;
+    gsap.killTweensOf(track);
+    gsap.set(track, { clearProps: 'x' });
+  }
+
+  /* ── Ciclo de vida / navegação ───────────────────────────────────── */
+
+  function init(startIndex = 0): void {
+    if (destroyed || !slides.length) return;
+    if (canLoop()) initLoop(startIndex);
+    else initBounded(startIndex);
+  }
+
+  function teardown(): void {
+    teardownLoop();
+    teardownBounded();
+  }
+
+  function goTo(i: number): void {
+    if (loop) loop.toIndex(i, tweenVars());
+    else goToBounded(i);
+  }
+
+  function step(dir: 1 | -1): void {
+    if (loop) {
+      if (dir === 1) loop.next(tweenVars());
+      else loop.previous(tweenVars());
+    } else {
+      goToBounded(currentIndex + dir);
     }
-
-    dragOffset = dx;
-    gsap.set(track, { x: baseX + dragOffset });
   }
 
-  function onPointerUp(e: PointerEvent): void {
-    if (!isPointerDown) return;
-    isPointerDown = false;
-
-    if (!hasDragStarted) return;
-
-    viewport.classList.remove('is-dragging');
-    if (viewport.hasPointerCapture(e.pointerId)) viewport.releasePointerCapture(e.pointerId);
-
-    const avgSlide = track.scrollWidth / slides.length;
-    const threshold = avgSlide * 0.25;
-
-    if (dragOffset < -threshold)      goTo(currentIndex + 1);
-    else if (dragOffset >  threshold) goTo(currentIndex - 1);
-    else                              goTo(currentIndex);
-
-    dragOffset     = 0;
-    hasDragStarted = false;
-  }
-
-  prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
-  nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
+  prevBtn.addEventListener('click', () => step(-1));
+  nextBtn.addEventListener('click', () => step(1));
 
   if (showDots) {
     dotsEl.addEventListener('click', (e) => {
@@ -175,29 +266,43 @@ export function createCarousel(opts: CarouselOptions): CarouselInstance {
     });
   }
 
-  viewport.addEventListener('pointerdown', onPointerDown);
-  viewport.addEventListener('pointermove', onPointerMove);
-  viewport.addEventListener('pointerup',   onPointerUp);
-  viewport.addEventListener('pointercancel', onPointerUp);
-
   root.tabIndex = 0;
   root.setAttribute('role', 'region');
   root.setAttribute('aria-roledescription', 'carrossel');
   root.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(currentIndex + 1); }
-    if (e.key === 'ArrowLeft')  { e.preventDefault(); goTo(currentIndex - 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); step(-1); }
   });
 
-  const onResize = (): void => goTo(currentIndex, false);
+  // Re-inicializa no resize: o modo pode mudar (loop ↔ limitado) com a largura.
+  let resizeTimer: number | undefined;
+  const onResize = (): void => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      const keep = currentIndex;
+      teardown();
+      init(keep);
+    }, RESIZE_DEBOUNCE_MS);
+  };
   window.addEventListener('resize', onResize);
 
-  requestAnimationFrame(() => goTo(0, false));
+  // Mede só depois de montado no DOM (offsetLeft/scrollWidth precisam de layout).
+  requestAnimationFrame(() => init(0));
+  // Fontes alteram a largura dos cards — re-mede quando terminarem de carregar.
+  document.fonts?.ready.then(() => {
+    if (destroyed) return;
+    const keep = currentIndex;
+    teardown();
+    init(keep);
+  });
 
   return {
     element: root,
     destroy(): void {
+      destroyed = true;
       window.removeEventListener('resize', onResize);
-      gsap.killTweensOf(track);
+      window.clearTimeout(resizeTimer);
+      teardown();
       root.remove();
     },
   };

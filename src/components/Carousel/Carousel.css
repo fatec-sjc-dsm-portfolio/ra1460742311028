@@ -9,14 +9,17 @@
   -webkit-user-select: none;
   user-select: none;
   padding-block: var(--space-4);
+  /* O gutter fica no viewport (não no track) para o loop infinito
+     emendar com o mesmo gap entre o último e o primeiro card. */
+  padding-inline: var(--gutter);
   touch-action: pan-y;
 }
 .carousel__viewport.is-dragging { cursor: grabbing; }
+.carousel__viewport.is-dragging * { pointer-events: none; }
 
 .carousel__track {
   display: flex;
   gap: var(--space-8);
-  padding-inline: var(--gutter);
   width: max-content;
   will-change: transform;
 }

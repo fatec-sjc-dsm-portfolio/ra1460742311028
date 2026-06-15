@@ -1,0 +1,54 @@
+{
+  "lps": [
+    {
+      "nome": "Motus Sports",
+      "url": "https://pitch.motussports.com.br/",
+      "cliente": "Motus Sports · Inteligência esportiva",
+      "segmento": "SportsTech · Pitch",
+      "ano": "2025",
+      "thumbnail": "/img/lps/motus-sports.webp",
+      "descricao": "Pitch interativo da plataforma. Apresentação navegável com identidade forte, foco em transmitir visão e tração para investidores e parceiros.",
+      "cor": "#14B8A6"
+    },
+    {
+      "nome": "Speakyroo",
+      "url": "https://lp.speakyroo.com/",
+      "cliente": "Speakyroo · SaaS de inglês",
+      "segmento": "EdTech · SaaS",
+      "ano": "2025",
+      "thumbnail": "/img/lps/speakyroo.webp",
+      "descricao": "LP de captura para SaaS de inglês com IA. Hero direto, prova social e CTA único acima da dobra.",
+      "cor": "#7C3AED"
+    },
+    {
+      "nome": "Palmeiras",
+      "url": "https://palmeiras.joaogabgr.com/",
+      "cliente": "Projeto torcedor",
+      "segmento": "Esporte · Conteúdo",
+      "ano": "2025",
+      "thumbnail": "/img/lps/palmeiras.webp",
+      "descricao": "Página temática com identidade visual forte do clube, animações cinematográficas e performance 95+.",
+      "cor": "#16A34A"
+    },
+    {
+      "nome": "Altair Grossi",
+      "url": "https://altairgrossi.joaogabgr.com/",
+      "cliente": "Altair Grossi · Músico",
+      "segmento": "Autoridade · Artista",
+      "ano": "2025",
+      "thumbnail": "/img/lps/altair-grossi.webp",
+      "descricao": "Landing de autoridade para artista. Estética editorial, CTAs claros e estrutura narrativa direta.",
+      "cor": "#F59E0B"
+    },
+    {
+      "nome": "Léo & Júnior",
+      "url": "https://leoejunior.joaogabgr.com/",
+      "cliente": "Léo & Júnior · Dupla sertaneja",
+      "segmento": "Música · Show",
+      "ano": "2025",
+      "thumbnail": "/img/lps/leo-junior.webp",
+      "descricao": "Landing de apresentação artística com identidade forte, foco em contato e prova social rápida.",
+      "cor": "#DC2626"
+    }
+  ]
+}

@@ -115,10 +115,9 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/jbmono-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="/fonts/fonts.css" />
 
     <link rel="preconnect" href="https://cdn.simpleicons.org" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -147,7 +146,7 @@
         <a href="#skills">skills</a>
         <a href="#experience">experiência</a>
         <a href="#projects">projetos</a>
-        <a href="#certs">certificados</a>
+        <a href="#certs">formação</a>
         <a href="#contact">contato</a>
       </nav>
     </header>
@@ -183,7 +182,7 @@
         <div class="container">
           <p class="eyebrow" data-reveal>// stack técnica</p>
           <h2 id="skills-title">Tecnologias que entrego em produção</h2>
-          <p class="hero__sub" data-reveal style="max-width:60ch;margin-top:var(--space-4);">
+          <p class="section__sub" data-reveal>
             Frontend, backend e operação escolhidas por contexto, não por tendência. Foco em entregar produto que funciona, escala e não precisa de plantão para sobreviver.
           </p>
           <div id="skills-grid" class="skills__grid"></div>
@@ -194,7 +193,7 @@
         <div class="container">
           <p class="eyebrow" data-reveal>// experiência</p>
           <h2 id="experience-title">Onde trabalhei e o que entreguei</h2>
-          <p class="hero__sub" data-reveal style="max-width:62ch;margin-top:var(--space-4);">
+          <p class="section__sub" data-reveal>
             Posições atuais e passadas, com escopo, conquistas mensuráveis e a stack que coloquei em produção em cada uma.
           </p>
           <div id="experience-list" class="experience-list"></div>
@@ -205,7 +204,7 @@
         <div class="projects__head container">
           <p class="eyebrow" data-reveal>// showcase</p>
           <h2 id="projects-title">Projetos que entregam impacto</h2>
-          <p class="hero__sub" data-reveal style="max-width:62ch;margin-top:var(--space-4);">
+          <p class="section__sub" data-reveal>
             Dois produtos próprios em produção e seis projetos acadêmicos integrados com clientes reais (Exército Brasileiro, Tecsus, FAPG). Cada card abre um case completo com problema, solução, desafios técnicos e resultado.
           </p>
         </div>
@@ -215,12 +214,12 @@
 
       <section id="certs" class="certs" aria-labelledby="certs-title">
         <div class="container">
-          <p class="eyebrow" data-reveal>// formação contínua</p>
-          <h2 id="certs-title">Formação e reconhecimentos</h2>
-          <p class="hero__sub" data-reveal style="max-width:62ch;margin-top:var(--space-4);">
-            FATEC DSM em curso, certificações técnicas e <strong>1º lugar na Maratona de Programação FATEC 2024</strong> entre mais de 50 equipes.
+          <p class="eyebrow" data-reveal>// formação &amp; capacitação</p>
+          <h2 id="certs-title">Formação e capacitação</h2>
+          <p class="section__sub" data-reveal>
+            Formação acadêmica em Desenvolvimento de Software Multiplataforma na FATEC SJC, capacitações técnicas e certificados — incluindo o <strong>1º lugar na Maratona de Programação FATEC 2024</strong> entre mais de 50 equipes.
           </p>
-          <div id="certs-grid" class="certs__grid"></div>
+          <div id="certs-grid" class="certs-groups"></div>
         </div>
       </section>
 
@@ -228,7 +227,7 @@
         <div class="container">
           <p class="eyebrow" data-reveal>// vamos conversar</p>
           <h2 id="contact-title">Pronto para o próximo projeto?</h2>
-          <p class="hero__sub" data-reveal style="max-width:58ch;margin-top:var(--space-4);">
+          <p class="section__sub" data-reveal>
             Estou aberto a oportunidades, parcerias técnicas e conversas sobre produto. Resposta em até 24h.
           </p>
           <div class="contact__links">

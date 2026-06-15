@@ -4,7 +4,20 @@
   padding-inline: var(--gutter);
 }
 
-section { position: relative; padding-block: var(--space-32); }
+section { position: relative; }
+
+/* Ritmo vertical entre seções — o hero tem layout próprio (100vh + flex). */
+.skills, .experience, .projects, .certs, .contact {
+  padding-block: var(--section-pad);
+}
+
+/* Subtítulo padrão de seção (abaixo do h2). */
+.section__sub {
+  margin-top: var(--space-4);
+  max-width: 62ch;
+  font-size: var(--fs-lg);
+  color: var(--fg-secondary);
+}
 
 /* HERO */
 .hero {
@@ -109,12 +122,11 @@ section { position: relative; padding-block: var(--space-32); }
   margin-bottom: var(--space-8);
 }
 
-/* CERTIFICATES */
+/* FORMAÇÃO & CAPACITAÇÃO (grid usado dentro de cada .cert-group) */
 .certs__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--space-6);
-  margin-top: var(--space-12);
 }
 
 /* CONTACT */

@@ -38,25 +38,44 @@ function renderSkills(c: Certificate): string {
   return `<ul class="cert-card__skills">${chips}${more}</ul>`;
 }
 
-export function renderCertificates(root: HTMLElement, items: readonly Certificate[]): void {
-  root.innerHTML = items.map((c) => {
-    const href = resolveHref(c);
-    const Tag  = href ? 'a' : 'div';
-    const attrs = href
-      ? `href="${href}" target="_blank" rel="noopener"`
-      : '';
+function renderCard(c: Certificate): string {
+  const href = resolveHref(c);
+  const Tag  = href ? 'a' : 'div';
+  const attrs = href
+    ? `href="${href}" target="_blank" rel="noopener"`
+    : '';
 
+  return `
+    <${Tag} class="cert-card" ${attrs}>
+      <header class="cert-card__head">
+        <span class="eyebrow">${c.date}</span>
+        <span class="cert-card__type">${TYPE_LABEL[c.type]}</span>
+      </header>
+      <h4>${c.title}</h4>
+      <p class="cert-card__institution">${c.institution}</p>
+      ${renderMeta(c)}
+      ${renderSkills(c)}
+    </${Tag}>
+  `;
+}
+
+/* A seção é "Formação e capacitação": a graduação abre, os certificados
+   e capacitações vêm dentro dela, e os documentos fecham. */
+const GROUPS: ReadonlyArray<{ title: string; types: readonly CertificateType[] }> = [
+  { title: 'Formação acadêmica',         types: ['degree'] },
+  { title: 'Capacitação e certificados', types: ['course', 'certification', 'achievement'] },
+  { title: 'Documentos',                 types: ['document'] },
+];
+
+export function renderCertificates(root: HTMLElement, items: readonly Certificate[]): void {
+  root.innerHTML = GROUPS.map(({ title, types }) => {
+    const group = items.filter((c) => types.includes(c.type));
+    if (!group.length) return '';
     return `
-      <${Tag} class="cert-card" ${attrs}>
-        <header class="cert-card__head">
-          <span class="eyebrow">${c.date}</span>
-          <span class="cert-card__type">${TYPE_LABEL[c.type]}</span>
-        </header>
-        <h3>${c.title}</h3>
-        <p class="cert-card__institution">${c.institution}</p>
-        ${renderMeta(c)}
-        ${renderSkills(c)}
-      </${Tag}>
+      <section class="cert-group" aria-label="${title}">
+        <h3 class="cert-group__title">${title}</h3>
+        <div class="certs__grid">${group.map(renderCard).join('')}</div>
+      </section>
     `;
   }).join('');
 }

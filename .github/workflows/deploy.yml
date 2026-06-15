@@ -23,7 +23,7 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          VITE_BASE: /ra1460742311028/
+          VITE_BASE: /Portifolio/
       - uses: actions/configure-pages@v5
         with:
           enablement: true
